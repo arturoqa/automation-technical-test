@@ -1,22 +1,35 @@
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import com.microsoft.playwright.*;
+import org.testng.annotations.*;
 
 
 public class BaseTest {
     private Browser browser;
+    private Page page;
     protected MainPage mainPage;
+    protected LoginPage loginPage;
+    protected RegisterPage registerPage;
+    protected MyAccountPage myAccountPage;
 
     @BeforeClass
     public void setUp(){
         browser = Playwright.create().chromium()
-                .launch();
+                .launch(new BrowserType.LaunchOptions().setHeadless(false));
+    }
 
-        Page page = browser.newPage();
+    @BeforeMethod
+    public void setBrowser(){
+        BrowserContext context = browser.newContext();
+        page = context.newPage();
         page.navigate("http://automationpractice.com/index.php");
         mainPage = new MainPage(page);
+        loginPage = new LoginPage(page);
+        registerPage = new RegisterPage(page);
+        myAccountPage = new MyAccountPage(page);
+    }
+
+    @AfterMethod
+    public void cleanBrowser(){
+        page.context().close();
     }
 
     @AfterClass

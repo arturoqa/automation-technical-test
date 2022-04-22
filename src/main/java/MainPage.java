@@ -4,18 +4,13 @@ public class MainPage {
 
     private Page page;
 
-    private final String signInButtonLocator = "#SubmitCreate";
-
     public MainPage(Page page){
         this.page = page;
     }
 
     public void goToSignIn() {
         page.click(".login");
-        page.waitForSelector(signInButtonLocator);
+        page.waitForSelector("#SubmitCreate");
     }
 
-    public Boolean isSignInDisplayed(){
-        return page.isVisible(signInButtonLocator);
-    }
 }
