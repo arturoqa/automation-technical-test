@@ -19,7 +19,6 @@ public class SignInTest extends BaseTest {
         assertTrue(myAccountPage.isUserLogged(),"User registration not completed correctly");
     }
 
-        //Invalid email format
     @Test
     public void signInInvalidEmailFormatTest(){
         mainPage.goToSignIn();

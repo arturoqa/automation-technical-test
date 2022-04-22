@@ -1,3 +1,4 @@
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
 public class LoginPage {
@@ -13,8 +14,9 @@ public class LoginPage {
         page.click("#SubmitCreate");
     }
     public boolean isWrongEmailFormatDisplayed(){
-        page.waitForSelector("#create_account_error");
-        return page.isVisible("#create_account_error");
+        Locator errorMessage = page.locator("#create_account_error");
+        errorMessage.waitFor();
+        return errorMessage.textContent().equals("Invalid email address.");
     }
 
 }
