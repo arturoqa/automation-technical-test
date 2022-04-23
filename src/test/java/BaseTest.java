@@ -9,6 +9,11 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected RegisterPage registerPage;
     protected MyAccountPage myAccountPage;
+    protected SearchPage searchPage;
+    protected CheckoutPage checkoutPage;
+
+    protected static final String loginUser = "test@login.com";
+    protected static final String loginPass = "Password";
 
     @BeforeClass
     public void setUp(){
@@ -25,6 +30,8 @@ public class BaseTest {
         loginPage = new LoginPage(page);
         registerPage = new RegisterPage(page);
         myAccountPage = new MyAccountPage(page);
+        searchPage = new SearchPage(page);
+        checkoutPage = new CheckoutPage(page);
     }
 
     @AfterMethod

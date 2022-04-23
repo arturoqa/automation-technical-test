@@ -11,17 +11,60 @@ public class RegisterPage {
     public void fillMandatoryInformation(String fName, String lName, String password,
                                          String address, String city, String state,
                                          String postalCode, String country, String mobilePhone){
+        fillCustomerFirstName(fName);
+        fillCustomerLastName(lName);
+        fillPassword(password);
+        fillFirstName(fName);
+        fillLastName(lName);
+        fillAddress1(address);
+        fillCity(city);
+        selectCountry(country);
+        selectState(state);
+        fillPostalCode(postalCode);
+        fillMobilePhone(mobilePhone);
+    }
+
+    public void fillCustomerFirstName(String fName){
         page.fill("#customer_firstname",fName);
+    }
+
+    public void fillCustomerLastName(String lName){
         page.fill("#customer_lastname",lName);
+    }
+
+    public void fillPassword(String password){
         page.fill("#passwd",password);
-        page.fill("#firstname",fName);
-        page.fill("#lastname",lName);
+    }
+
+    public void fillFirstName(String fName){
+        page.fill("#lastname",fName);
+    }
+
+    public void fillLastName(String lName){
+        page.fill("#firstname",lName);
+    }
+
+    public void fillAddress1(String address){
         page.fill("#address1",address);
+    }
+
+    public void fillCity(String city){
         page.fill("#city",city);
-        page.click("#id_state");
+    }
+
+    public void selectCountry(String country){
         page.selectOption("#id_country",country);
+    }
+
+    public void selectState(String state){
         page.selectOption("#id_state",state);
+    }
+
+    public void fillPostalCode(String postalCode){
         page.fill("#postcode",postalCode);
+    }
+
+    public void fillMobilePhone(String mobilePhone){
         page.fill("#phone_mobile",mobilePhone);
     }
 
