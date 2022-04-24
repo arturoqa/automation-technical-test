@@ -30,6 +30,24 @@ public class LoginTest extends BaseTest {
         assertTrue(loginPage.isWrongEmailFormatInLoginDisplayed(),"Wrong login email format error not displayed");
     }
 
-    //FORGOT PASSWORD TEST
+    @Test
+    public void doForgotPasswordFlowTest(){
+        mainPage.goToSignIn();
+        loginPage.goToForgotPassword();
+        forgotPasswordPage.fillEmail(loginUser);
+        forgotPasswordPage.clickRetrievePassword();
+        assertTrue(forgotPasswordPage.isSentEmailDisplayed(),"Email has not been sent");
+    }
+
+    //The following test is for a feature that should not exist as confirming that an account with and specific email does not
+    // exist is a security issue
+    @Test
+    public void doForgotPasswordWithNotExistingAccountTest(){
+        mainPage.goToSignIn();
+        loginPage.goToForgotPassword();
+        forgotPasswordPage.fillEmail("notexistingaccount@notexisting.com");
+        forgotPasswordPage.clickRetrievePassword();
+        assertTrue(forgotPasswordPage.isNotExistingAccountDisplayed(),"Not existing account message not displayed");
+    }
 
 }

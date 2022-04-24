@@ -39,6 +39,8 @@ public class LoginPage {
         page.click(".logo");
     }
 
+    public void goToForgotPassword(){page.click("[title='Recover your forgotten password']");}
+
     public Boolean isWrongCredentialsErrorDisplayed(){
         page.waitForSelector(authErrorLocator);
         return page.isVisible(authErrorLocator);

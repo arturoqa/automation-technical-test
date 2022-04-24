@@ -19,3 +19,13 @@ To execute them in headful mode (so that the browser that executes the test is s
 to :
 
 `browser = Playwright.create().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));`
+
+### Execute test on CircleCI
+
+To be able to trigger and see the executions of the tests in CircleCI yuo have to be a contributor to the project. To do so ask for an invitation as collaborator.
+If you only want to check the executions without being able to modify anything ask for the CircleCI invitation link.
+
+Once in CircleCI if you have access to the project there are two ways to trigger the tests configured currently:
+
+- Inside the project select a branch in the dropdown and click the Trigger Pipeline button on the top right side of the screen.
+- Do a push to any branch of the repository (will trigger the tests automatically)

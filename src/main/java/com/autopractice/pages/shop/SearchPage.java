@@ -1,5 +1,6 @@
 package com.autopractice.pages.shop;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
 public class SearchPage {
@@ -24,6 +25,10 @@ public class SearchPage {
     public Boolean isNumOfProductFoundCorrect(String numOfProducts){
         page.waitForSelector(".product-listing");
         return page.isVisible("text="+numOfProducts+" result has been found.");
+    }
+
+    public Boolean isCorrectCategoryDisplayed(String category){
+        return page.textContent(".category-name").contains(category);
     }
 
 }

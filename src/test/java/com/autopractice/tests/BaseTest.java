@@ -1,9 +1,6 @@
 package com.autopractice.tests;
 
-import com.autopractice.pages.account.LoginPage;
-import com.autopractice.pages.account.MyAccountPage;
-import com.autopractice.pages.account.RegisterPage;
-import com.autopractice.pages.account.WishlistPage;
+import com.autopractice.pages.account.*;
 import com.autopractice.pages.shop.CheckoutPage;
 import com.autopractice.pages.MainPage;
 import com.autopractice.pages.shop.ProductPage;
@@ -23,6 +20,9 @@ public class BaseTest {
     protected CheckoutPage checkoutPage;
     protected ProductPage productPage;
     protected WishlistPage wishlistPage;
+    protected ForgotPasswordPage forgotPasswordPage;
+    protected OrderHistoryPage orderHistoryPage;
+    protected PersonalInfoPage personalInfoPage;
 
     protected static final String loginUser = "test@login.com";
     protected static final String loginPass = "Password";
@@ -46,6 +46,9 @@ public class BaseTest {
         checkoutPage = new CheckoutPage(page);
         productPage = new ProductPage(page);
         wishlistPage = new WishlistPage(page);
+        forgotPasswordPage = new ForgotPasswordPage(page);
+        orderHistoryPage = new OrderHistoryPage(page);
+        personalInfoPage = new PersonalInfoPage(page);
     }
 
     @AfterMethod

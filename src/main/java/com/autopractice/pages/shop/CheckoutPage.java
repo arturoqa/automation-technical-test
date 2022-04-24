@@ -39,11 +39,12 @@ public class CheckoutPage {
     }
 
     public void confirmOrder(){
-        page.click("text=I confirm my order");
+        page.click("#cart_navigation button");
     }
 
-    public void isOrderCompleted(){
-        page.isVisible("text=Your order on My Store is complete.");
+    public Boolean isOrderCompleted(){
+        page.waitForSelector("text=Your order on My Store is complete.");
+        return page.isVisible("text=Your order on My Store is complete.");
     }
 
 }

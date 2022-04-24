@@ -16,7 +16,7 @@ public class MainPage {
     }
 
     public void searchProduct(String product){
-        page.fill("#search_query_top","Blouse");
+        page.fill("#search_query_top",product);
         page.click(".button-search");
     }
 
@@ -38,6 +38,11 @@ public class MainPage {
 
     public void goToAccount(){
         page.click(".account");
+    }
+
+    public void goToWomenEveningDresses(){
+        page.locator("[title='Women']").first().hover();
+        page.locator("[title='Evening Dresses']").first().click();
     }
 
 }

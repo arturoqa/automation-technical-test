@@ -24,7 +24,12 @@ public class ShopTest extends BaseTest {
         checkoutPage.proceedToPayment();
         checkoutPage.payByBank();
         checkoutPage.confirmOrder();
-        checkoutPage.isOrderCompleted();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        assertTrue(checkoutPage.isOrderCompleted(),"Order not Completed correctly");
     }
 
     @Test
@@ -38,7 +43,13 @@ public class ShopTest extends BaseTest {
         checkoutPage.proceedToPayment();
         checkoutPage.payByCheck();
         checkoutPage.confirmOrder();
-        checkoutPage.isOrderCompleted();
+        assertTrue(checkoutPage.isOrderCompleted(),"Order not Completed correctly");
+    }
+
+    @Test
+    public void navigateToWomenEveningDresses(){
+        mainPage.goToWomenEveningDresses();
+        assertTrue(searchPage.isCorrectCategoryDisplayed("Evening Dresses"),"Navigation to category not done correctly");
     }
 
 }

@@ -19,4 +19,12 @@ public class MyAccountPage {
         page.click(".lnk_wishlist");
     }
 
+    public void goToOrderHistory(){
+        page.click(".icon-list-ol");
+    }
+
+    public void goToPersonalInformation(){
+        page.click(".icon-user");
+    }
+
 }

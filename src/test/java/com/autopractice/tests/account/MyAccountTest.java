@@ -23,8 +23,23 @@ public class MyAccountTest extends BaseTest {
         wishlistPage.deleteFromWishlist();
     }
 
-    //ORDER HISTORY AND DESTAILS TEST
+    @Test
+    public void checkOrderHistoryTest(){
+        mainPage.goToSignIn();
+        loginPage.fillLogin(loginUser,loginPass);
+        loginPage.clickLogin();
+        myAccountPage.goToOrderHistory();
+        assertTrue(orderHistoryPage.isOrderHistoryDisplayed(),"Order history not displayed correctly");
+    }
 
-    //PERSONAL
+    @Test
+    public void checkPersonalInfoTest(){
+        mainPage.goToSignIn();
+        loginPage.fillLogin(loginUser,loginPass);
+        loginPage.clickLogin();
+        myAccountPage.goToPersonalInformation();
+        assertTrue(personalInfoPage.isPersonalInfoDisplayed("Login","Test","test@login.com"),
+                "Personal Information is not displayed correctly");
+    }
 
 }
