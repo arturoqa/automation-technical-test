@@ -1,3 +1,5 @@
+package com.autopractice.pages.shop;
+
 import com.microsoft.playwright.Page;
 
 public class SearchPage {

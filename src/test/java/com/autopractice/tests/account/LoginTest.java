@@ -1,3 +1,6 @@
+package com.autopractice.tests.account;
+
+import com.autopractice.tests.BaseTest;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
@@ -26,5 +29,7 @@ public class LoginTest extends BaseTest {
         loginPage.fillLogin("incorrectFormat","incorrectPass");
         assertTrue(loginPage.isWrongEmailFormatInLoginDisplayed(),"Wrong login email format error not displayed");
     }
+
+    //FORGOT PASSWORD TEST
 
 }

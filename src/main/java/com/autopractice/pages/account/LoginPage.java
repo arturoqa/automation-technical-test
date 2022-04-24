@@ -1,3 +1,5 @@
+package com.autopractice.pages.account;
+
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
@@ -31,6 +33,10 @@ public class LoginPage {
 
     public void clickLogin(){
         page.click("#SubmitLogin");
+    }
+
+    public void goToMainPage(){
+        page.click(".logo");
     }
 
     public Boolean isWrongCredentialsErrorDisplayed(){

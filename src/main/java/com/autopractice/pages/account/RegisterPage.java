@@ -1,3 +1,5 @@
+package com.autopractice.pages.account;
+
 import com.microsoft.playwright.Page;
 
 public class RegisterPage {

@@ -1,3 +1,5 @@
+package com.autopractice.pages.account;
+
 import com.microsoft.playwright.Page;
 
 public class MyAccountPage {
@@ -11,6 +13,10 @@ public class MyAccountPage {
     public Boolean isUserLogged(){
         page.waitForSelector(".logout");
         return page.isVisible(".logout");
+    }
+
+    public void goToWishlist(){
+        page.click(".lnk_wishlist");
     }
 
 }

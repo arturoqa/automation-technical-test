@@ -1,3 +1,5 @@
+package com.autopractice.pages;
+
 import com.microsoft.playwright.Page;
 
 public class MainPage {
@@ -25,9 +27,17 @@ public class MainPage {
         return price;
     }
 
+    public void goToMostPopularProductPage(){
+        page.locator(".product-container").first().click();
+    }
+
     public void proceedToCheckout(){
         page.waitForSelector("[title='Proceed to checkout']");
         page.locator("[title='Proceed to checkout']").click();
+    }
+
+    public void goToAccount(){
+        page.click(".account");
     }
 
 }

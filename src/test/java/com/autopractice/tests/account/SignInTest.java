@@ -1,6 +1,8 @@
+package com.autopractice.tests.account;
+
+import com.autopractice.tests.BaseTest;
 import org.testng.annotations.Test;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 import static org.testng.Assert.assertTrue;
