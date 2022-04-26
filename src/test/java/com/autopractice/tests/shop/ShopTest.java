@@ -25,11 +25,6 @@ public class ShopTest extends BaseTest {
         checkoutPage.proceedToPayment();
         checkoutPage.payByBank();
         checkoutPage.confirmOrder();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         assertTrue(checkoutPage.isOrderCompleted(),"Order not Completed correctly");
     }
 
