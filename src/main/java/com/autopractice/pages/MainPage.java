@@ -45,4 +45,9 @@ public class MainPage {
         page.locator("[title='Evening Dresses']").first().click();
     }
 
+    public void goToWomenSummerDresses(){
+        page.locator("[title='Women']").first().hover();
+        page.locator("[title='Summer Dresses']").first().click();
+    }
+
 }

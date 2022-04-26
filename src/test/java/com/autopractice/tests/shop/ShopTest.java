@@ -1,5 +1,6 @@
 package com.autopractice.tests.shop;
 
+
 import com.autopractice.tests.BaseTest;
 import org.testng.annotations.Test;
 
@@ -47,9 +48,16 @@ public class ShopTest extends BaseTest {
     }
 
     @Test
-    public void navigateToWomenEveningDresses(){
+    public void navigateToWomenEveningDressesTest(){
         mainPage.goToWomenEveningDresses();
         assertTrue(searchPage.isCorrectCategoryDisplayed("Evening Dresses"),"Navigation to category not done correctly");
+    }
+
+    @Test
+    public void filterSearchTest(){
+        mainPage.goToWomenSummerDresses();
+        searchPage.clickCasualFilter("Casual");
+        assertTrue(searchPage.isFilteringDoneCorrectly());
     }
 
 }
